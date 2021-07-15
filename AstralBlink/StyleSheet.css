@@ -1,0 +1,43 @@
+﻿
+.button {
+    background-color: #9370db;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.datalist {
+    border: solid;
+    border-color: #9370db /*#f98b88*/;
+    transition: transform .2s; /* Animation */
+    margin-left: 10px;
+    margin-bottom:10px;
+}
+.datalist:hover{
+    transform:scale(1.1);
+}
+.Hlink {
+    color: #7e52de;
+    font-size: medium;
+}
+.btn {
+    background-color: #8366f4;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+

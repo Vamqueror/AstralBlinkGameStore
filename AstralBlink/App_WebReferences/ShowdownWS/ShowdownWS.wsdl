@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NewGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewGameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewGameResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WinByStronger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerSum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WinByStrongerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WinByStrongerResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WinByWeaker">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerSum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WinByWeakerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WinByWeakerResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanPlay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanPlayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlayResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="games" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGamesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UseWin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UseWinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UseWinResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewUserResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NewGameSoapIn">
+    <wsdl:part name="parameters" element="tns:NewGame" />
+  </wsdl:message>
+  <wsdl:message name="NewGameSoapOut">
+    <wsdl:part name="parameters" element="tns:NewGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="WinByStrongerSoapIn">
+    <wsdl:part name="parameters" element="tns:WinByStronger" />
+  </wsdl:message>
+  <wsdl:message name="WinByStrongerSoapOut">
+    <wsdl:part name="parameters" element="tns:WinByStrongerResponse" />
+  </wsdl:message>
+  <wsdl:message name="WinByWeakerSoapIn">
+    <wsdl:part name="parameters" element="tns:WinByWeaker" />
+  </wsdl:message>
+  <wsdl:message name="WinByWeakerSoapOut">
+    <wsdl:part name="parameters" element="tns:WinByWeakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanPlaySoapIn">
+    <wsdl:part name="parameters" element="tns:CanPlay" />
+  </wsdl:message>
+  <wsdl:message name="CanPlaySoapOut">
+    <wsdl:part name="parameters" element="tns:CanPlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGamesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGames" />
+  </wsdl:message>
+  <wsdl:message name="AddGamesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UseWinSoapIn">
+    <wsdl:part name="parameters" element="tns:UseWin" />
+  </wsdl:message>
+  <wsdl:message name="UseWinSoapOut">
+    <wsdl:part name="parameters" element="tns:UseWinResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:NewUser" />
+  </wsdl:message>
+  <wsdl:message name="NewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:NewUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShowdownWSSoap">
+    <wsdl:operation name="NewGame">
+      <wsdl:input message="tns:NewGameSoapIn" />
+      <wsdl:output message="tns:NewGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WinByStronger">
+      <wsdl:input message="tns:WinByStrongerSoapIn" />
+      <wsdl:output message="tns:WinByStrongerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WinByWeaker">
+      <wsdl:input message="tns:WinByWeakerSoapIn" />
+      <wsdl:output message="tns:WinByWeakerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanPlay">
+      <wsdl:input message="tns:CanPlaySoapIn" />
+      <wsdl:output message="tns:CanPlaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGames">
+      <wsdl:input message="tns:AddGamesSoapIn" />
+      <wsdl:output message="tns:AddGamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UseWin">
+      <wsdl:input message="tns:UseWinSoapIn" />
+      <wsdl:output message="tns:UseWinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <wsdl:input message="tns:NewUserSoapIn" />
+      <wsdl:output message="tns:NewUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShowdownWSSoap" type="tns:ShowdownWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewGame">
+      <soap:operation soapAction="http://tempuri.org/NewGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinByStronger">
+      <soap:operation soapAction="http://tempuri.org/WinByStronger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinByWeaker">
+      <soap:operation soapAction="http://tempuri.org/WinByWeaker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanPlay">
+      <soap:operation soapAction="http://tempuri.org/CanPlay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGames">
+      <soap:operation soapAction="http://tempuri.org/AddGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UseWin">
+      <soap:operation soapAction="http://tempuri.org/UseWin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <soap:operation soapAction="http://tempuri.org/NewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShowdownWSSoap12" type="tns:ShowdownWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewGame">
+      <soap12:operation soapAction="http://tempuri.org/NewGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinByStronger">
+      <soap12:operation soapAction="http://tempuri.org/WinByStronger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinByWeaker">
+      <soap12:operation soapAction="http://tempuri.org/WinByWeaker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanPlay">
+      <soap12:operation soapAction="http://tempuri.org/CanPlay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGames">
+      <soap12:operation soapAction="http://tempuri.org/AddGames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UseWin">
+      <soap12:operation soapAction="http://tempuri.org/UseWin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <soap12:operation soapAction="http://tempuri.org/NewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShowdownWS">
+    <wsdl:port name="ShowdownWSSoap" binding="tns:ShowdownWSSoap">
+      <soap:address location="http://localhost:52504/ShowdownWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShowdownWSSoap12" binding="tns:ShowdownWSSoap12">
+      <soap12:address location="http://localhost:52504/ShowdownWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

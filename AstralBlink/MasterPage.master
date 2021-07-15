@@ -1,0 +1,217 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html style="background-image:url(images/background.jpg)">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 120px;
+            height: 86px;
+            border-bottom-style: solid;
+        }
+        .auto-style3 {
+            height: 86px;
+            border-bottom-style: solid;
+        }
+        .auto-style4 {
+            height: 86px;
+            width: 180px;
+            border-bottom-style: solid;
+        }
+        .auto-style5 {
+            width: 100%;
+            height: 100px;
+        }
+        .auto-style7 {
+            height: 31px;
+            text-align: center;
+            width: 826px;
+        }
+        .auto-style8 {
+            height: 35px;
+            width: 826px;
+        }
+        .auto-style9 {
+            height: 24px;
+        }
+        .auto-style10 {
+            height: 4px;
+            text-align: right;
+        }
+        .auto-style11 {
+            height: 20px;
+            width: 629px;
+        }
+        .auto-style12 {
+            font-size: large;
+            color:#000000;
+        }
+        .auto-style14 {
+            width: 130%;
+        }
+        .auto-style15 {
+            text-align: center;
+            height: 20px;
+        }
+        .auto-style16 {
+            width: 275px;
+            height: 20px;
+        }
+        .auto-style24 {
+            font-size: large;
+            margin-bottom: 0px;
+            color:#000000;
+        }
+        .auto-style25 {
+            width: 261px;
+        }
+        .Overhaul{
+            height: 127px;
+            background-color: #A032D4;
+            background-image: url("images/background.jpg");
+            color:#000000;
+            top: 0;
+            transition: transform .1s
+        }
+        .Violet{ /*Evergarden*/
+            color:#000000;
+            font-size: medium;
+        }
+        .Yun{
+            background-color:#000000;
+            width: 100%;
+            color:#7e52de;
+            justify-content:center;
+            margin:0px auto 0px auto;
+            
+        }
+
+        .auto-style28 {
+            height: 127px;
+            background-color: #A032D4;
+            background-image: url('images/background.jpg');
+            width: 100%;
+            border-top-style: solid;
+        }
+
+    .Overhaul a {
+        display: block;
+        text-decoration: none;
+    }
+
+        .Overhaul a:hover {
+            background: #E52E2E;
+            color: black;
+            font-size:20px;
+        }
+
+
+        .auto-style29 {
+            /*Evergarden*/
+            color: #000000;
+            font-size: medium;
+            margin-left: 0px;
+        }
+
+
+        </style>
+</head>
+<body style="height: 270px">
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1" style="width:100%">
+            <tr>
+                <td class="Overhaul" style="width:100%">
+                    <table class="Overhaul" style="width:100%">
+                        <tr>
+                            <td class="auto-style2"></td>
+                            <td class="auto-style4">
+                                <asp:ImageButton ID="LogoImage" runat="server" CausesValidation="False" Height="100px" ImageUrl="~/Images/Logo.png" OnClick="LogoImage_Click" />
+                            </td>
+                            <td class="auto-style3">
+                                <table class="auto-style5">
+                                    <tr>
+                                        <td class="auto-style8">
+                                            <table class="auto-style1">
+                                                <tr>
+                                                    <td class="auto-style10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="auto-style9">&nbsp;<table class="auto-style1">
+                                                        <tr>
+                                                            <td class="auto-style11">
+                                                                <table class="auto-style14">
+                                                                    <tr>
+                                                                        <td class="auto-style16">
+                                                                <asp:Label ID="UsernameLbl" runat="server" Visible="False"></asp:Label>
+                                                                        </td>
+                                                                        <td class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="AdminLink" runat="server" NavigateUrl="~/Admin.aspx" Visible="False" CssClass="auto-style29" Width="169px">Admin Panel</asp:HyperLink>
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:HyperLink ID="CartLink" runat="server" NavigateUrl="~/ShoppingCart.aspx" CssClass="Violet" Width="59px">CART</asp:HyperLink>
+                                                                            <span class="auto-style12">(<asp:Label ID="CartCountLbl" runat="server" Text="0"></asp:Label>
+                                                                            )&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="ShowdownLink" runat="server" NavigateUrl="~/Showdown.aspx" Visible="False" CssClass="Violet" Width="185px">Showdown</asp:HyperLink>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="auto-style7">
+                                            <asp:HyperLink ID="StoreLink" runat="server" CssClass="auto-style12" Height="22px" Width="275px" NavigateUrl="~/Store.aspx">Store</asp:HyperLink>
+                                            <asp:LinkButton ID="LoginLink" runat="server" CssClass="auto-style12" Height="25px" OnClick="LoginLink_Click" Width="275px" CausesValidation="False">Login</asp:LinkButton>
+                                            <asp:HyperLink ID="SignUpLink" runat="server" CssClass="auto-style24" Height="22px" Width="275px" NavigateUrl="~/Register.aspx">Sign up</asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Yun" id="Yun" Style="margin:0px auto 0px auto;">
+                    <table class="Yun">
+                        <tr>
+                            <td class="Yun">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    <div class="Yun">
+                                    </div>
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style28">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style25">&nbsp;</td>
+                            <td><asp:HyperLink ID="AboutLink" runat="server" CssClass="Violet" NavigateUrl="~/About.aspx">About</asp:HyperLink>
+&nbsp;&nbsp;
+                    <asp:HyperLink ID="ContactLink" runat="server" CssClass="Violet" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
+                            </td>
+                        </tr>
+                    </table>
+                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
